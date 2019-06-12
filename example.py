@@ -1,4 +1,4 @@
-#helo Vigener
+#helo Vigener cipher
 from TestInterface import Ui_MainWindow
 from WinShifrV import Ui_ShifrV
 from WinShifrB import Ui_ShifrB
