@@ -279,9 +279,9 @@ class Window2B(QWidget):
             n += 1
         return old_text
 
-class MainWindow(QMainWindow):#Инициализация класса главного окна
-    def __init__(self):       #Здесь мы определем в наш главный файл элементы
-        super(MainWindow, self).__init__()#файла, импортированного из Ui_MainWindows1
+class MainWindow(QMainWindow):
+    def __init__(self):       
+        super(MainWindow, self).__init__()
         self. win = Ui_MainWindow()
         self.win.setupUi(self)
         self.win.radioButton.clicked.connect(self.shifrViginer)
