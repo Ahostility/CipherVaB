@@ -1,10 +1,17 @@
-from PyQt5 import QtCore, QtGui, QtWidgets
+# -*- coding: utf-8 -*-
 
+# Form implementation generated from reading ui file 'TestInterface.ui'
+#
+# Created by: PyQt5 UI code generator 5.11.3
+#
+# WARNING! All changes made in this file will be lost!
+
+from PyQt5 import QtCore, QtGui, QtWidgets
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(449, 236)
+        MainWindow.resize(449, 323)
         font = QtGui.QFont()
         font.setFamily("Sitka")
         font.setPointSize(12)
@@ -26,6 +33,9 @@ class Ui_MainWindow(object):
         self.label_2 = QtWidgets.QLabel(self.centralwidget)
         self.label_2.setObjectName("label_2")
         self.formLayout.setWidget(7, QtWidgets.QFormLayout.LabelRole, self.label_2)
+        self.radioButton_3 = QtWidgets.QRadioButton(self.centralwidget)
+        self.radioButton_3.setObjectName("radioButton_3")
+        self.formLayout.setWidget(10, QtWidgets.QFormLayout.LabelRole, self.radioButton_3)
         MainWindow.setCentralWidget(self.centralwidget)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
         self.statusbar.setObjectName("statusbar")
@@ -41,5 +51,5 @@ class Ui_MainWindow(object):
         self.radioButton_2.setText(_translate("MainWindow", "Shifr_Bofora"))
         self.radioButton.setText(_translate("MainWindow", "Shiffr_Vigeinera"))
         self.label_2.setText(_translate("MainWindow", "Classical Cryptografy"))
-
+        self.radioButton_3.setText(_translate("MainWindow", "BreakCipherV"))
 
