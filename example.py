@@ -1,4 +1,4 @@
-#helo Vigener and Boufort1
+#helo Vigener and Boufort12
 from TestInterface import Ui_MainWindow
 from WinShifrV import Ui_ShifrV
 from WinShifrB import Ui_ShifrB
