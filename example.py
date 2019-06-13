@@ -1,10 +1,9 @@
-#helo Vigener and Boufort12
+#helo Vigener and Boufort1
 from TestInterface import Ui_MainWindow
 from WinShifrV import Ui_ShifrV
 from WinShifrB import Ui_ShifrB
 from outShifrAnswer import Ui_outShifr
 import sys
-from PyQt5 import QtGui, QtCore
 from PyQt5.QtWidgets import QApplication, QMainWindow, QWidget, QPushButton
 
 class outWindow(QWidget):
@@ -40,31 +39,6 @@ class WindowButtonLang(QWidget):
         self.button1.move(80, 10)
         self.button1.setText('Eng')
         self.button1.show()
-
-class BreakingCipher(QWidget):
-    def __init__(self):
-        super(BreakingCipher, self).__init__()
-        # BreakingCipher.setObjectName("BreakCipher")
-        # BreakingCipher.resize(550.360)
-        # font = QtGui.QFont()
-        # font.setFamily("Sitka")#Text style
-        # font.setPointSize(12)#Size of cherecters
-        # BreakingCipher.setFont(font)
-        self.setWindowTitle('Language')
-        self.setMinimumWidth(250)
-        self.setMinimumHeight(50)
-        self.button = QPushButton(self)
-        self.button.move(10, 10)
-        self.button.setText('Rus')
-        self.button.show()
-        self.button1 = QPushButton(self)
-        self.button1.move(80, 10)
-        self.button1.setText('Eng')
-        self.button1.show()
-
-
-
-
 
 class Window2V(QWidget):
     def __init__(self):
@@ -332,16 +306,6 @@ class MainWindow(QMainWindow):
         self.win1.button.clicked.connect(self.win1.close)
         self.win1.button1.clicked.connect(self.win22.engLang)
         self.win1.button1.clicked.connect(self.win1.close)
-
-    # def breakV(self):
-    #     self.win23 = BreakingCipher()
-    #     self.win23.show()
-    #     self.win1 = WindowButtonLang
-    #     self.win1.show()
-    #     self.win1.button.clicked.connect(self.win21.ruLang)
-    #     self.win1.button.clicked.connect(self.win1.close)
-    #     self.win1.button1.clicked.connect(self.win21.engLang)
-    #     self.win1.button1.clicked.connect(self.win1.close)
 
 
 if __name__ == '__main__':
