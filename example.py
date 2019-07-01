@@ -67,9 +67,9 @@ class Window2V(QWidget):
             abcRu.append(chr(i))
         self.abc = abcRu
         self.winV.pushButton.clicked.connect(self.encryptUse)
-        self.winV.pushButton.clicked.connect(self.close)
+        # self.winV.pushButton.clicked.connect(self.close)
         self.winV.pushButton_2.clicked.connect(self.decryptUse)
-        self.winV.pushButton_2.clicked.connect(self.close)
+        # self.winV.pushButton_2.clicked.connect(self.close)
         self.winV.pushButton_3.clicked.connect(self.clearText)
 
     def engLang(self):
@@ -84,9 +84,9 @@ class Window2V(QWidget):
             abcEng.append(chr(i))
         self.abc = abcEng
         self.winV.pushButton.clicked.connect(self.encryptUse)
-        self.winV.pushButton.clicked.connect(self.close)
+        # self.winV.pushButton.clicked.connect(self.close)
         self.winV.pushButton_2.clicked.connect(self.decryptUse)
-        self.winV.pushButton_2.clicked.connect(self.close)
+        # self.winV.pushButton_2.clicked.connect(self.close)
         self.winV.pushButton_3.clicked.connect(self.clearText)
 
     def clearText(self):
@@ -187,9 +187,9 @@ class Window2B(QWidget):
             abcRu.append(chr(i))
         self.abc = abcRu
         self.winB.pushButton.clicked.connect(self.encryptUse)
-        self.winB.pushButton.clicked.connect(self.close)
+        # self.winB.pushButton.clicked.connect(self.close)
         self.winB.pushButton_2.clicked.connect(self.decryptUse)
-        self.winB.pushButton_2.clicked.connect(self.close)
+        # self.winB.pushButton_2.clicked.connect(self.close)
         self.winB.pushButton_3.clicked.connect(self.clearText)
 
     def engLang(self):
@@ -204,9 +204,9 @@ class Window2B(QWidget):
             abcEng.append(chr(i))
         self.abc = abcEng
         self.winB.pushButton.clicked.connect(self.encryptUse)
-        self.winB.pushButton.clicked.connect(self.close)
+        # self.winB.pushButton.clicked.connect(self.close)
         self.winB.pushButton_2.clicked.connect(self.decryptUse)
-        self.winB.pushButton_2.clicked.connect(self.close)
+        # self.winB.pushButton_2.clicked.connect(self.close)
         self.winB.pushButton_3.clicked.connect(self.clearText)
 
     def clearText(self):
@@ -306,7 +306,6 @@ class MainWindow(QMainWindow):
         self.win1.button.clicked.connect(self.win1.close)
         self.win1.button1.clicked.connect(self.win22.engLang)
         self.win1.button1.clicked.connect(self.win1.close)
-
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
