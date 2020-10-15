@@ -72,9 +72,9 @@ class Request21(QWidget):
     def encription(self):
         self.answer2.show()
         self.origin = self.req21.textEdit.toPlainText()
-        our_text = self.origin
+        our_text = self.origin.upper()
         self.key1 = self.req21.textEdit_2.toPlainText()
-        keyIntC = int(self.key1)
+        keyIntC = int(self.key1.upper())
         abc = createABC2()
         shifrCezar = str(Cezar(our_text,abc,keyIntC))
         self.answer2.answer.textEdit.setPlainText(shifrCezar)
@@ -82,10 +82,11 @@ class Request21(QWidget):
     def decription(self):
         self.answer2.show()
         self.origin = self.req21.textEdit.toPlainText()
+        our_text = self.origin.upper()
         self.key1 = self.req21.textEdit_2.toPlainText()
-        keyIntC = int(self.key1)
+        keyIntC = int(self.key1.upper())
         abc = createABC2()
-        shifrCezar = str(decriptCezar(self.origin,abc,keyIntC))
+        shifrCezar = str(decriptCezar(our_text,abc,keyIntC))
         self.answer2.answer.textEdit_2.setPlainText(shifrCezar)
 
     def clearText(self):
@@ -110,11 +111,11 @@ class Request22(QWidget):
     def encription(self):
         self.answer2.show()
         self.origin = self.req22.textEdit.toPlainText()
-        our_text = self.origin
+        our_text = self.origin.upper()
         self.key1 = self.req22.textEdit_2.toPlainText()
-        keyInt1 = int(self.key1)
+        keyInt1 = int(self.key1.upper())
         self.key2 = self.req22.textEdit_3.toPlainText()
-        keyInt2 = int(self.key2)
+        keyInt2 = int(self.key2.upper())
         abc = createABC2()
         self.shifrAphine = aphineCezar(our_text, abc, keyInt1,keyInt2)
         self.answer2.answer.textEdit.setPlainText(str(self.shifrAphine[0]))
@@ -122,11 +123,11 @@ class Request22(QWidget):
     def decription(self):
         self.answer2.show()
         self.origin = self.req22.textEdit.toPlainText()
-        our_text = self.origin
+        our_text = self.origin.upper()
         self.key1 = self.req22.textEdit_2.toPlainText()
-        keyInt1 = int(self.key1)
+        keyInt1 = int(self.key1.upper())
         self.key2 = self.req22.textEdit_3.toPlainText()
-        keyInt2 = int(self.key2)
+        keyInt2 = int(self.key2.upper())
         abc = createABC2()
         index = self.shifrAphine[1]
         shifrAphine = decriptaphineCezar(our_text,index, abc, keyInt1, keyInt2)
@@ -153,11 +154,11 @@ class Request23(QWidget):
     def encription(self):
         self.answer2.show()
         self.origin = self.req23.textEdit.toPlainText()
-        our_text = self.origin
+        our_text = self.origin.upper()
         self.key1 = self.req23.textEdit_2.toPlainText()
-        keyWord = self.key1
+        keyWord = self.key1.upper()
         self.key2 = self.req23.textEdit_3.toPlainText()
-        keyIntC = int(self.key2)
+        keyIntC = int(self.key2.upper())
         abc = createABC2()
 
         cipherCezar = str(cezarWithKeyWord(our_text,abc,keyWord,keyIntC))
@@ -167,11 +168,11 @@ class Request23(QWidget):
     def decription(self):
         self.answer2.show()
         self.origin = self.req23.textEdit.toPlainText()
-        our_text = self.origin
+        our_text = self.origin.upper()
         self.key1 = self.req23.textEdit_2.toPlainText()
-        keyWord = self.key1
+        keyWord = self.key1.upper()
         self.key2 = self.req23.textEdit_3.toPlainText()
-        keyIntC = int(self.key2)
+        keyIntC = int(self.key2.upper())
         abc = createABC2()
         cipherCezar = str(decriptcezarWithKeyWord(our_text, abc, keyWord, keyIntC))
         self.answer2.answer.textEdit_2.setPlainText(cipherCezar)
@@ -238,18 +239,18 @@ class Request3(QWidget):
     def encription(self):
         self.answer3.show()
         self.origin = self.req3.textEdit.toPlainText()
-        our_text = list(self.origin)
+        our_text = list(self.origin.upper())
         self.key1 = self.req3.textEdit_2.toPlainText()
-        abc = createABC3(self.key1)
+        abc = createABC3(self.key1.upper())
         shifrPleyfer = str(cipherPayfer(our_text,matrixNew(abc)))
         self.answer3.answer.textEdit.setPlainText(shifrPleyfer)
 
     def decription(self):
         self.answer3.show()
         self.origin = self.req3.textEdit.toPlainText()
-        our_text = list(self.origin)
+        our_text = list(self.origin.upper())
         self.key1 = self.req3.textEdit_2.toPlainText()
-        abc = createABC3(self.key1)
+        abc = createABC3(self.key1.upper())
         shifrPleyfer = str(decriptCipherPlayfer(our_text,matrixNew(abc)))
         self.answer3.answer.textEdit_2.setPlainText(shifrPleyfer)
 
@@ -274,23 +275,25 @@ class Request41(QWidget):
     def encription(self):
         self.answer4.show()
         self.origin = self.req41.textEdit.toPlainText()
-        our_text = self.origin
+        our_text = self.origin.upper()
         self.key1 = self.req41.textEdit_2.toPlainText()
+        key1 = self.key1.upper()
         self.abc =[]
         for i in range(1040, 1072):
             self.abc.append(chr(i))
-        shifr= str(cipherViginer(our_text,self.abc,self.key1))
+        shifr= str(cipherViginer(our_text,self.abc,key1))
         self.answer4.answer.textEdit.setPlainText(shifr)
 
     def decription(self):
         self.answer4.show()
         self.origin = self.req41.textEdit.toPlainText()
-        our_text = list(self.origin)
+        our_text = list(self.origin.upper())
         self.key1 = self.req41.textEdit_2.toPlainText()
+        key1 = self.key1.upper()
         self.abc = []
         for i in range(1040, 1072):
             self.abc.append(chr(i))
-        shifr = str(decriptionViginer(our_text, self.abc, self.key1))
+        shifr = str(decriptionViginer(our_text, self.abc, key1))
         self.answer4.answer.textEdit_2.setPlainText(shifr)
 
     def clearText(self):
@@ -314,7 +317,8 @@ class Request42(QWidget):
     def encription(self):
         self.answer4.show()
         self.origin = self.req42.textEdit.toPlainText()
-        shifr = str(winston_enc(self.origin))
+        our_text = self.origin.upper()
+        shifr = str(winston_enc(our_text))
         self.answer4.answer.textEdit.setPlainText(shifr)
 
 
