@@ -38,6 +38,9 @@ def decriptaphineCezar(shifrotext, indexAphine,abc,a,b):
 def cezarWithKeyWord(origin,abc,key,indexK):
     shifrotext = ""
     abcWithKey = createABC2()
+    abc = createABC2()
+    abc.insert(6,"Ё")
+    abcWithKey.insert(6,"Ё")
     mid = []
     for i in range(len(key)):
         if key[i] not in mid:
@@ -48,6 +51,8 @@ def cezarWithKeyWord(origin,abc,key,indexK):
     abcMid = []
     for i in range(len(abcWithKey)):
         abcMid.append(abcWithKey[(len(abcWithKey)-indexK+i)%len(abcWithKey)])
+    print(abc)
+    print(abcMid)
     for i in range(len(origin)):
         shifrotext+=abcMid[(abc.index(origin[i]))%len(abc)]
     return shifrotext
@@ -82,8 +87,10 @@ def trisemus(origin,abc,key):
     abcMid = []
     for i in range(len(abcWithKey)):
         abcMid.append(abcWithKey[(i) % len(abcWithKey)])
+    print(abc)
+    print(abcMid)
     for i in range(len(origin)):
-        shifrotext += abcMid[(abc.index(origin[i])) % len(abc)]
+        shifrotext += abcMid[(8+abc.index(origin[i])) % len(abc)]
     return shifrotext
 
 def decriptionTris(shifrotext,abc,key):
@@ -100,17 +107,17 @@ def decriptionTris(shifrotext,abc,key):
     for i in range(len(abcWithKey)):
         abcMid.append(abcWithKey[(i) % len(abcWithKey)])
     for i in range(len(shifrotext)):
-        our_text += abc[(abcMid.index(shifrotext[i])) % len(abcMid)]
+        our_text += abc[(len(abc) + abcMid.index(shifrotext[i])) % len(abcMid)]
     return our_text
 
 #
 abc = createABC2()
 # origin = "HELLO"#originText
-origin = "ПРИВЕТ"#originText
+origin = "РАЗУМА"#originText
 # a = int(input())#aphine
 # b = int(input())#aphine
-key = input().upper()#keyWord
-# keyInt = int(input())#indexKeyShift
+key = "ЧАСЫ"#input().upper()#keyWord
+keyInt = 16#int(input())#indexKeyShift
 # #Cezar
 # print(Cezar(origin,abc,keyInt))
 # print(decriptCezar(Cezar(origin,abc,keyInt),abc,keyInt))
@@ -119,8 +126,8 @@ key = input().upper()#keyWord
 # print(aphineCezarRes[0])
 # print(decriptaphineCezar(aphineCezarRes[0],aphineCezarRes[1],abc,a,b))
 # #cezarWithKeyWord
-# print(cezarWithKeyWord(origin,abc,key,keyInt))
-# print(decriptcezarWithKeyWord(cezarWithKeyWord(origin,abc,key,keyInt),abc,key,keyInt))
+print(cezarWithKeyWord(origin,abc,key,keyInt))
+print(decriptcezarWithKeyWord(cezarWithKeyWord(origin,abc,key,keyInt),abc,key,keyInt))
 # #trisemus
-print(trisemus(origin,abc,key))
-print(decriptionTris(trisemus(origin,abc,key),abc,key))
+# print(trisemus(origin,abc,key))
+# print(decriptionTris(trisemus(origin,abc,key),abc,key))
