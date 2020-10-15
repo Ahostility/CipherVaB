@@ -50,6 +50,31 @@ class Request1(QWidget):
         self.req1.textEdit_2.clear()
         self.req1.textEdit_3.clear()
 
+class Request12(QWidget):
+    def __init__(self):
+        super(Request12,self).__init__()
+        self.req1 = Ui_Request1()
+        self.req1.setupUi(self)
+        self.answer1 = Answer()
+        self.req1.textEdit.setPlainText("")
+        self.req1.textEdit_2.setPlainText("")
+        self.req1.textEdit_3.setPlainText("")
+        self.req1.pushButton.clicked.connect(self.encription)
+        self.req1.pushButton_2.clicked.connect(self.decription)
+        self.req1.pushButton_3.clicked.connect(self.clearText)
+
+    def encription(self):
+        print("encription1")
+        pass
+
+    def decription(self):
+        pass
+
+    def clearText(self):
+        self.req1.textEdit.clear()
+        self.req1.textEdit_2.clear()
+        self.req1.textEdit_3.clear()
+
 
 
 
@@ -221,8 +246,6 @@ class Request24(QWidget):
         self.req24.textEdit_2.clear()
         self.req24.textEdit_3.clear()
 
-
-
 class Request3(QWidget):
     def __init__(self):
         super(Request3,self).__init__()
@@ -329,8 +352,6 @@ class Request42(QWidget):
         self.req42.textEdit.clear()
         self.req42.textEdit_2.clear()
         self.req42.textEdit_3.clear()
-
-
 
 
 

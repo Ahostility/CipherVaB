@@ -7,7 +7,7 @@ def createABC2():
 
 def Cezar(our_text, abc, key):
     shifrotext = ""
-    print(abc)
+    abc.insert(6,"Ё")
     for i in range(len(our_text)):
         shifrotext+=abc[(abc.index(our_text[i])+key)%len(abc)]
     return shifrotext
@@ -22,6 +22,7 @@ def aphineCezar(our_text,abc,a,b):
     shifrotext = ""
     indexArr = []
     result = []
+    abc.insert(6,"Ё")
     for i in range(len(our_text)):
         shifrotext+=abc[(a*abc.index(our_text[i])+b)%len(abc)]
         # print(shifrotext)
@@ -109,18 +110,20 @@ def decriptionTris(shifrotext,abc,key):
     abcMid = []
     for i in range(len(abcWithKey)):
         abcMid.append(abcWithKey[(i) % len(abcWithKey)])
+    print(abc)
+    print(abcMid)
     for i in range(len(shifrotext)):
-        our_text += abc[(len(abc) + abcMid.index(shifrotext[i])) % len(abcMid)]
+        our_text += abcMid[(len(abc) + abcMid.index(shifrotext[i])-8) % len(abcMid)]
     return our_text
 
 #
-# abc = createABC2()
-# origin = "мыдолжныпризнаватьочевидное".upper()#originText
+abc = createABC2()
+# origin = "мыдолжныпризнатьочевидноепонимаютлишьтектохочетпонять".upper()#originText
 # origin = "УСПЕХ"#originText
 # a = int(input())#aphine
 # b = int(input())#aphine
-# key = "ЧАСЫ"#input().upper()#keyWord
-# keyInt = 16#int(input())#indexKeyShift
+# key = "музыка".upper()#input().upper()#keyWord
+# keyInt = 17#int(input())#indexKeyShift
 # #Cezar
 # print(Cezar(origin,abc,keyInt))
 # print(decriptCezar(Cezar(origin,abc,keyInt),abc,keyInt))
@@ -131,6 +134,6 @@ def decriptionTris(shifrotext,abc,key):
 # #cezarWithKeyWord
 # print(cezarWithKeyWord(origin,abc,key,keyInt))
 # print(decriptcezarWithKeyWord(cezarWithKeyWord(origin,abc,key,keyInt),abc,key,keyInt))
-# #trisemus
+#trisemus
 # print(trisemus(origin,abc,key))
 # print(decriptionTris(trisemus(origin,abc,key),abc,key))

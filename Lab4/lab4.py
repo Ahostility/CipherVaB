@@ -85,4 +85,9 @@ def winston_enc(origin):
             enc_message.append(key1[5 * q1 + r0])
     return ''.join(enc_message)
 #
-# print(Lab4.winston_enc(input()))
+# origin = "тотктосмотритнаделособеихсторонобычноневидитниодноиизних".upper()
+# print(winston_enc(origin))
+# abc = [chr(i) for i in range(1040,1072)]
+# key = "жизнь".upper()
+# print(cipherViginer(origin,abc,key))
+# print(decriptionViginer(cipherViginer(origin,abc,key),abc,key))

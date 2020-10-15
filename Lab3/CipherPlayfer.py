@@ -163,11 +163,11 @@ def decriptCipherPlayfer(shifrotext,matrix):
     # Вывод расшифрованного сообщения на экран
     return "".join(decrypt)
 
-# our_text = list("HELLOWORLD")
-# key = "KEYK"
-# abc = createABC3(key)
+our_text = list("тотктосмотритнаделособеихсторонобычноневидитниоднойизних".upper())
+key = "жизнь".upper()
+abc = createABC3(key)
 
 # origin = [i for i in input().upper()]
 
-# print(cipherPayfer(our_text,matrixNew(abc)))
-# print(decriptCipherPlayfer(cipherPayfer(our_text,matrixNew(abc)),matrixNew(abc)))
+print(cipherPayfer(our_text,matrixNew(abc)))
+print(decriptCipherPlayfer(cipherPayfer(our_text,matrixNew(abc)),matrixNew(abc)))
