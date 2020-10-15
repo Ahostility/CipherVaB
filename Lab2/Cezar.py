@@ -1,6 +1,7 @@
 def createABC2():
     ABC = []
     for i in range(1040,1072):
+    # for i in range(65,92):
         ABC.append(chr(i))
     return ABC
 
@@ -103,11 +104,12 @@ def decriptionTris(shifrotext,abc,key):
     return our_text
 
 #
-# abc = createABC2()
+abc = createABC2()
 # origin = "HELLO"#originText
+origin = "ПРИВЕТ"#originText
 # a = int(input())#aphine
 # b = int(input())#aphine
-# key = input().upper()#keyWord
+key = input().upper()#keyWord
 # keyInt = int(input())#indexKeyShift
 # #Cezar
 # print(Cezar(origin,abc,keyInt))
@@ -120,5 +122,5 @@ def decriptionTris(shifrotext,abc,key):
 # print(cezarWithKeyWord(origin,abc,key,keyInt))
 # print(decriptcezarWithKeyWord(cezarWithKeyWord(origin,abc,key,keyInt),abc,key,keyInt))
 # #trisemus
-# print(trisemus(origin,abc,key))
-# print(decriptionTris(trisemus(origin,abc,key),abc,key))
+print(trisemus(origin,abc,key))
+print(decriptionTris(trisemus(origin,abc,key),abc,key))

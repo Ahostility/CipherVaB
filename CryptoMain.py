@@ -77,7 +77,6 @@ class Request21(QWidget):
         keyIntC = int(self.key1)
         abc = createABC2()
         shifrCezar = str(Cezar(our_text,abc,keyIntC))
-        print(shifrCezar)
         self.answer2.answer.textEdit.setPlainText(shifrCezar)
 
     def decription(self):
@@ -131,7 +130,6 @@ class Request22(QWidget):
         abc = createABC2()
         index = self.shifrAphine[1]
         shifrAphine = decriptaphineCezar(our_text,index, abc, keyInt1, keyInt2)
-        print(shifrAphine)
         self.answer2.answer.textEdit_2.setPlainText(str(shifrAphine))
 
     def clearText(self):
@@ -141,7 +139,7 @@ class Request22(QWidget):
 
 class Request23(QWidget):
     def __init__(self):
-        super(Request23,self).__init__()
+        super(Request23, self).__init__()
         self.req23 = Ui_Request1()
         self.req23.setupUi(self)
         self.answer2 = Answer()
@@ -152,13 +150,30 @@ class Request23(QWidget):
         self.req23.pushButton_2.clicked.connect(self.decription)
         self.req23.pushButton_3.clicked.connect(self.clearText)
 
-
     def encription(self):
-        print("encription2")
-        pass
+        self.answer2.show()
+        self.origin = self.req23.textEdit.toPlainText()
+        our_text = self.origin
+        self.key1 = self.req23.textEdit_2.toPlainText()
+        keyWord = self.key1
+        self.key2 = self.req23.textEdit_3.toPlainText()
+        keyIntC = int(self.key2)
+        abc = createABC2()
+        cipherCezar = str(cezarWithKeyWord(our_text,abc,keyWord,keyIntC))
+        self.answer2.answer.textEdit.setPlainText(cipherCezar)
+
 
     def decription(self):
-        pass
+        self.answer2.show()
+        self.origin = self.req23.textEdit.toPlainText()
+        our_text = self.origin
+        self.key1 = self.req23.textEdit_2.toPlainText()
+        keyWord = self.key1
+        self.key2 = self.req23.textEdit_3.toPlainText()
+        keyIntC = int(self.key2)
+        abc = createABC2()
+        cipherCezar = str(decriptcezarWithKeyWord(our_text, abc, keyWord, keyIntC))
+        self.answer2.answer.textEdit_2.setPlainText(cipherCezar)
 
     def clearText(self):
         self.req23.textEdit.clear()
@@ -180,8 +195,14 @@ class Request24(QWidget):
 
 
     def encription(self):
-        print("encription2")
-        pass
+        self.answer2.show()
+        self.origin = self.req24.textEdit.toPlainText()
+        our_text = self.origin.upper()
+        self.key1 = self.req24.textEdit_2.toPlainText()
+        keyWord = self.key1.upper()
+        abc = createABC2()
+        cipherCezar = str(trisemus(our_text, abc, keyWord))
+        self.answer2.answer.textEdit.setPlainText(cipherCezar)
 
     def decription(self):
         pass
