@@ -9,13 +9,13 @@ def Cezar(our_text, abc, key):
     shifrotext = ""
     print(abc)
     for i in range(len(our_text)):
-        shifrotext+=abc[(abc.index(our_text[i])+key-1)%len(abc)]
+        shifrotext+=abc[(abc.index(our_text[i])+key)%len(abc)]
     return shifrotext
 
 def decriptCezar(shifrotext,abc,keyInt):
     origin = ""
     for i in range(len(shifrotext)):
-        origin+=abc[(len(abc) + abc.index(shifrotext[i]) - keyInt+1)%len(abc)]
+        origin+=abc[(len(abc) + abc.index(shifrotext[i]) - keyInt)%len(abc)]
     return origin
 
 def aphineCezar(our_text,abc,a,b):
@@ -114,16 +114,16 @@ def decriptionTris(shifrotext,abc,key):
     return our_text
 
 #
-abc = createABC2()
-origin = "мыдолжныпризнаватьочевидное".upper()#originText
+# abc = createABC2()
+# origin = "мыдолжныпризнаватьочевидное".upper()#originText
 # origin = "УСПЕХ"#originText
 # a = int(input())#aphine
 # b = int(input())#aphine
 # key = "ЧАСЫ"#input().upper()#keyWord
-keyInt = 16#int(input())#indexKeyShift
+# keyInt = 16#int(input())#indexKeyShift
 # #Cezar
-print(Cezar(origin,abc,keyInt))
-print(decriptCezar(Cezar(origin,abc,keyInt),abc,keyInt))
+# print(Cezar(origin,abc,keyInt))
+# print(decriptCezar(Cezar(origin,abc,keyInt),abc,keyInt))
 # #AphineCipher
 # aphineCezarRes = aphineCezar(origin,abc,a,b)
 # print(aphineCezarRes[0])
