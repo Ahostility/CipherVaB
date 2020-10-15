@@ -1,6 +1,5 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
-
 class Ui_outShifr(object):
     def setupUi(self, outShifr):
         outShifr.setObjectName("outShifr")

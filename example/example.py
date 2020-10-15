@@ -1,8 +1,8 @@
 #helo Vigener and Boufort12
-from TestInterface import Ui_MainWindow
-from WinShifrV import Ui_ShifrV
-from WinShifrB import Ui_ShifrB
-from outShifrAnswer import Ui_outShifr
+from example.TestInterface import Ui_MainWindow
+from example.WinShifrV import Ui_ShifrV
+from example.WinShifrB import Ui_ShifrB
+from example.outShifrAnswer import Ui_outShifr
 import sys
 from PyQt5.QtWidgets import QApplication, QMainWindow, QWidget, QPushButton
 
@@ -51,19 +51,7 @@ class Window2V(QWidget):
 
     def ruLang(self):
         abcRu = []
-        for i in range(9, 11):
-            abcRu.append(chr(i))
-        for i in range(32, 65):
-            abcRu.append(chr(i))
-        for i in range(91, 97):
-            abcRu.append(chr(i))
-        for i in range(123, 127):
-            abcRu.append(chr(i))
-        for i in range(161, 173):
-            abcRu.append(chr(i))
-        for i in range(174, 256):
-            abcRu.append(chr(i))
-        for i in range(1040, 1104):
+        for i in range(1040, 1072):
             abcRu.append(chr(i))
         self.abc = abcRu
         self.winV.pushButton.clicked.connect(self.encryptUse)
@@ -74,13 +62,7 @@ class Window2V(QWidget):
 
     def engLang(self):
         abcEng = []
-        for i in range(9, 11):
-            abcEng.append(chr(i))
-        for i in range(32, 127):
-            abcEng.append(chr(i))
-        for i in range(161, 173):
-            abcEng.append(chr(i))
-        for i in range(174, 256):
+        for i in range(65,91):
             abcEng.append(chr(i))
         self.abc = abcEng
         self.winV.pushButton.clicked.connect(self.encryptUse)
@@ -110,7 +92,6 @@ class Window2V(QWidget):
         self.answer.answ.textEdit_2.setPlainText(old_text)
         self.answer.answ.pushButton_3.clicked.connect(self.answer.clearWin)
         self.answer.answ.pushButton_3.clicked.connect(self.answer.close)
-
 
     def shifr_Vigera(self):
         shifrotext = ""
@@ -171,19 +152,7 @@ class Window2B(QWidget):
 
     def ruLang(self):
         abcRu = []
-        for i in range(9, 11):
-            abcRu.append(chr(i))
-        for i in range(32, 65):
-            abcRu.append(chr(i))
-        for i in range(91, 97):
-            abcRu.append(chr(i))
-        for i in range(123, 127):
-            abcRu.append(chr(i))
-        for i in range(161, 173):
-            abcRu.append(chr(i))
-        for i in range(174, 256):
-            abcRu.append(chr(i))
-        for i in range(1040, 1104):
+        for i in range(1040, 1072):
             abcRu.append(chr(i))
         self.abc = abcRu
         self.winB.pushButton.clicked.connect(self.encryptUse)
@@ -194,13 +163,7 @@ class Window2B(QWidget):
 
     def engLang(self):
         abcEng = []
-        for i in range(9, 11):
-            abcEng.append(chr(i))
-        for i in range(32, 127):
-            abcEng.append(chr(i))
-        for i in range(161, 173):
-            abcEng.append(chr(i))
-        for i in range(174, 256):
+        for i in range(65, 91):
             abcEng.append(chr(i))
         self.abc = abcEng
         self.winB.pushButton.clicked.connect(self.encryptUse)

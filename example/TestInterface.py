@@ -11,23 +11,35 @@ class Ui_MainWindow(object):
         MainWindow.setIconSize(QtCore.QSize(24, 24))
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
+
         self.formLayout = QtWidgets.QFormLayout(self.centralwidget)
         self.formLayout.setObjectName("formLayout")
+
         self.label = QtWidgets.QLabel(self.centralwidget)
         self.label.setObjectName("label")
         self.formLayout.setWidget(0, QtWidgets.QFormLayout.FieldRole, self.label)
+
         self.label_2 = QtWidgets.QLabel(self.centralwidget)
         self.label_2.setObjectName("label_2")
         self.formLayout.setWidget(7, QtWidgets.QFormLayout.LabelRole, self.label_2)
+
         self.radioButton = QtWidgets.QRadioButton(self.centralwidget)
         self.radioButton.setObjectName("radioButton")
         self.formLayout.setWidget(8, QtWidgets.QFormLayout.LabelRole, self.radioButton)
+
         self.radioButton_2 = QtWidgets.QRadioButton(self.centralwidget)
         self.radioButton_2.setObjectName("radioButton_2")
         self.formLayout.setWidget(9, QtWidgets.QFormLayout.LabelRole, self.radioButton_2)
+
+        self.radioButton_3 = QtWidgets.QRadioButton(self.centralwidget)
+        self.radioButton_3.setObjectName("radioButton_3")
+        self.formLayout.setWidget(10, QtWidgets.QFormLayout.LabelRole, self.radioButton_3)
+
         MainWindow.setCentralWidget(self.centralwidget)
+
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
         self.statusbar.setObjectName("statusbar")
+
         MainWindow.setStatusBar(self.statusbar)
 
         self.retranslateUi(MainWindow)
@@ -40,4 +52,5 @@ class Ui_MainWindow(object):
         self.label_2.setText(_translate("MainWindow", "Classical Cryptografy"))
         self.radioButton.setText(_translate("MainWindow", "Shiffr_Vigeinera"))
         self.radioButton_2.setText(_translate("MainWindow", "Shifr_Bofora"))
+        self.radioButton_3.setText(_translate("MainWindow", "CezarCipher"))
 
