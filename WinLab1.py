@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'ui\untitled.ui'
+# Form implementation generated from reading ui file 'ui\lab1.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.1
 #
@@ -14,13 +14,25 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_Lab1(object):
     def setupUi(self, Lab1):
         Lab1.setObjectName("Lab1")
-        Lab1.resize(367, 0)
+        Lab1.resize(440, 262)
         self.label = QtWidgets.QLabel(Lab1)
         self.label.setGeometry(QtCore.QRect(20, 20, 64, 36))
         font = QtGui.QFont()
         font.setPointSize(16)
         self.label.setFont(font)
         self.label.setObjectName("label")
+
+        self.radioButton = QtWidgets.QRadioButton(Lab1)
+        self.radioButton.setGeometry(QtCore.QRect(20, 70, 121, 21))
+        self.radioButton.setObjectName("radioButton")
+
+        self.radioButton_2 = QtWidgets.QRadioButton(Lab1)
+        self.radioButton_2.setGeometry(QtCore.QRect(20, 95, 111, 21))
+        self.radioButton_2.setObjectName("radioButton_2")
+
+        self.radioButton_3 = QtWidgets.QRadioButton(Lab1)
+        self.radioButton_3.setGeometry(QtCore.QRect(20, 115, 91, 31))
+        self.radioButton_3.setObjectName("radioButton_3")
 
         self.retranslateUi(Lab1)
         QtCore.QMetaObject.connectSlotsByName(Lab1)
@@ -29,3 +41,6 @@ class Ui_Lab1(object):
         _translate = QtCore.QCoreApplication.translate
         Lab1.setWindowTitle(_translate("Lab1", "Form"))
         self.label.setText(_translate("Lab1", "Lab1"))
+        self.radioButton.setText(_translate("Lab1", "tableMethodDouble"))
+        self.radioButton_2.setText(_translate("Lab1", "simpleWithKey"))
+        self.radioButton_3.setText(_translate("Lab1", "Magicsquare"))

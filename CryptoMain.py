@@ -1,6 +1,7 @@
 import sys
+from Lab1.Lab1 import *
 from Lab2.Cezar import *
-from Lab3.CipherPlayfer import *
+from Lab3.pleyferUpdate import *
 from Lab4.lab4 import *
 from PyQt5.QtWidgets import QApplication, QMainWindow, QWidget
 from TitleCrypto import Ui_TitleWindow
@@ -25,57 +26,126 @@ class Answer(QWidget):
         self.answer.textEdit_2.clear()
 
 
-class Request1(QWidget):
+class Request11(QWidget):
     def __init__(self):
-        super(Request1,self).__init__()
-        self.req1 = Ui_Request1()
-        self.req1.setupUi(self)
+        super(Request11,self).__init__()
+        self.req11 = Ui_Request1()
+        self.req11.setupUi(self)
         self.answer1 = Answer()
-        self.req1.textEdit.setPlainText("")
-        self.req1.textEdit_2.setPlainText("")
-        self.req1.textEdit_3.setPlainText("")
-        self.req1.pushButton.clicked.connect(self.encription)
-        self.req1.pushButton_2.clicked.connect(self.decription)
-        self.req1.pushButton_3.clicked.connect(self.clearText)
+        self.req11.textEdit.setPlainText("")
+        self.req11.textEdit_2.setPlainText("")
+        self.req11.textEdit_3.setPlainText("")
+        self.req11.pushButton.clicked.connect(self.encription)
+        self.req11.pushButton_2.clicked.connect(self.decription)
+        self.req11.pushButton_3.clicked.connect(self.clearText)
 
     def encription(self):
-        print("encription1")
-        pass
+        self.answer1.show()
+        self.origin = self.req11.textEdit.toPlainText()
+        our_text = self.origin.upper()
+        self.key1 = self.req11.textEdit_2.toPlainText()
+        keyList1 = [int(i) for i in self.key1]
+
+        self.key2 = self.req11.textEdit_3.toPlainText()
+        keyList2 = [int(i) for i in self.key2]
+
+        shifrCezar = str(double_permutation_enc(keyList1,keyList2,our_text))
+        self.answer1.answer.textEdit.setPlainText(shifrCezar)
 
     def decription(self):
-        pass
+        self.answer1.show()
+        self.origin = self.req11.textEdit.toPlainText()
+        our_text = self.origin.upper()
+        self.key1 = self.req11.textEdit_2.toPlainText()
+        keyList1 = [int(i) for i in self.key1]
+
+        self.key2 = self.req11.textEdit_3.toPlainText()
+        keyList2 = [int(i) for i in self.key2]
+
+        shifrCezar = str(double_permutation_dec(keyList1, keyList2, our_text))
+        self.answer1.answer.textEdit.setPlainText(shifrCezar)
 
     def clearText(self):
-        self.req1.textEdit.clear()
-        self.req1.textEdit_2.clear()
-        self.req1.textEdit_3.clear()
+        self.req11.textEdit.clear()
+        self.req11.textEdit_2.clear()
+        self.req11.textEdit_3.clear()
 
 class Request12(QWidget):
     def __init__(self):
         super(Request12,self).__init__()
-        self.req1 = Ui_Request1()
-        self.req1.setupUi(self)
+        self.req12 = Ui_Request1()
+        self.req12.setupUi(self)
         self.answer1 = Answer()
-        self.req1.textEdit.setPlainText("")
-        self.req1.textEdit_2.setPlainText("")
-        self.req1.textEdit_3.setPlainText("")
-        self.req1.pushButton.clicked.connect(self.encription)
-        self.req1.pushButton_2.clicked.connect(self.decription)
-        self.req1.pushButton_3.clicked.connect(self.clearText)
+        self.req12.textEdit.setPlainText("")
+        self.req12.textEdit_2.setPlainText("")
+        self.req12.textEdit_3.setPlainText("")
+        self.req12.pushButton.clicked.connect(self.encription)
+        self.req12.pushButton_2.clicked.connect(self.decription)
+        self.req12.pushButton_3.clicked.connect(self.clearText)
 
     def encription(self):
-        print("encription1")
-        pass
+        self.answer1.show()
+        self.origin = self.req12.textEdit.toPlainText()
+        our_text = self.origin.upper()
+        self.key1 = self.req12.textEdit_2.toPlainText()
+        keyList1 = [int(i) for i in self.key1]
+
+        cipherPerm = str(permutation_enc(our_text,keyList1))
+        self.answer1.answer.textEdit.setPlainText(cipherPerm)
 
     def decription(self):
-        pass
+        self.answer1.show()
+        self.origin = self.req12.textEdit.toPlainText()
+        our_text = self.origin.upper()
+        self.key1 = self.req12.textEdit_2.toPlainText()
+        keyList1 = [int(i) for i in self.key1]
+
+        cipherPerm = str(permutation_dec(our_text,keyList1))
+        self.answer1.answer.textEdit.setPlainText(cipherPerm)
 
     def clearText(self):
-        self.req1.textEdit.clear()
-        self.req1.textEdit_2.clear()
-        self.req1.textEdit_3.clear()
+        self.req12.textEdit.clear()
+        self.req12.textEdit_2.clear()
+        self.req12.textEdit_3.clear()
+
+class Request13(QWidget):
+    def __init__(self):
+        super(Request13,self).__init__()
+        self.req13 = Ui_Request1()
+        self.req13.setupUi(self)
+        self.answer1 = Answer()
+        self.req13.textEdit.setPlainText("")
+        self.req13.textEdit_2.setPlainText("")
+        self.req13.textEdit_3.setPlainText("")
+        self.req13.pushButton.clicked.connect(self.encription)
+        self.req13.pushButton_2.clicked.connect(self.decription)
+        self.req13.pushButton_3.clicked.connect(self.clearText)
+
+    def encription(self):
+        self.answer1.show()
+        self.origin = self.req13.textEdit.toPlainText()
+        our_text = self.origin.upper()
+
+        # shifrCezar = str(magic_square_enc([16,3,2,13,5,10,11,8,9,6,7,12,4,15,14,1], our_text))
+        # shifrCezar = str(magic_square_enc([9,16,2,7,6,3,13,12,15,10,8,1,4,5,11,14], our_text))
+        magic = str(magic_square_enc([8,3,4,1,5,9,6,7,2], our_text))
+        self.answer1.answer.textEdit.setPlainText(magic)
 
 
+    def decription(self):
+        self.answer1.show()
+        self.origin = self.req13.textEdit.toPlainText()
+        our_text = self.origin.upper()
+
+        # shifrCezar = str(magic_square_enc([16,3,2,13,5,10,11,8,9,6,7,12,4,15,14,1], our_text))
+        # shifrCezar = str(magic_square_enc([9,16,2,7,6,3,13,12,15,10,8,1,4,5,11,14], our_text))
+        magic = str(magic_square_dec([8, 3, 4, 1, 5, 9, 6, 7, 2], our_text))
+        self.answer1.answer.textEdit_2.setPlainText(magic)
+
+    def clearText(self):
+        self.req13.textEdit.clear()
+        self.req13.textEdit_2.clear()
+        self.req13.textEdit_3.clear()
 
 
 
@@ -262,20 +332,14 @@ class Request3(QWidget):
     def encription(self):
         self.answer3.show()
         self.origin = self.req3.textEdit.toPlainText()
-        our_text = list(self.origin.upper())
+        our_text = self.origin.upper()
         self.key1 = self.req3.textEdit_2.toPlainText()
-        abc = createABC3(self.key1.upper())
-        shifrPleyfer = str(cipherPayfer(our_text,matrixNew(abc)))
+        keyWord = self.key1.upper()
+        shifrPleyfer = str(playfair_encode(keyWord,our_text))
         self.answer3.answer.textEdit.setPlainText(shifrPleyfer)
 
     def decription(self):
-        self.answer3.show()
-        self.origin = self.req3.textEdit.toPlainText()
-        our_text = list(self.origin.upper())
-        self.key1 = self.req3.textEdit_2.toPlainText()
-        abc = createABC3(self.key1.upper())
-        shifrPleyfer = str(decriptCipherPlayfer(our_text,matrixNew(abc)))
-        self.answer3.answer.textEdit_2.setPlainText(shifrPleyfer)
+        pass
 
     def clearText(self):
         self.req3.textEdit.clear()
@@ -361,10 +425,21 @@ class WindowLab1(QWidget):
         super(WindowLab1, self).__init__()
         self.winLab1 = Ui_Lab1()
         self.winLab1.setupUi(self)
+        self.winLab1.radioButton.clicked.connect(self.openReq1)
+        self.winLab1.radioButton_2.clicked.connect(self.openReq2)
+        self.winLab1.radioButton_3.clicked.connect(self.openReq3)
 
-    def openReq(self):
-        self.req1 = Request1()
-        self.req1.show()
+    def openReq1(self):
+        self.req11 = Request11()
+        self.req11.show()
+
+    def openReq2(self):
+        self.req12 = Request12()
+        self.req12.show()
+
+    def openReq3(self):
+        self.req13 = Request13()
+        self.req13.show()
 
 class WindowLab2(QWidget):
     def __init__(self):
