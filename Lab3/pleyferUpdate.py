@@ -45,3 +45,31 @@ def playfair_encode(key, message):
     return ''.join(enc_message)
 
 print(playfair_encode('РАБОТА', 'ПРИЛЕТАЮЗАВТРА'))
+
+def createABC3(key):
+    abc = []
+    for i in range(1040,1072):
+        abc.append(chr(i))
+    abcWithKey = abc
+    mid = []
+    for i in range(len(key)):
+        if key[i] not in mid:
+            abcWithKey.pop(abcWithKey.index(key[i]))
+            mid.append(key[i])
+    for i in range(len(mid)):
+        abcWithKey.insert(i, mid[i])
+    abcMid = []
+    for i in range(len(abcWithKey)):
+        abcMid.append((abcWithKey[i % len(abcWithKey)]))
+    return abcMid
+def matrixNew(abc):
+    matrix = []
+    print(abc)
+    for i in range(4):
+        matrix.append(abc[i*8:(i+1)*8])
+        print(matrix[i],i)
+    return matrix
+
+keyWord = "привет".upper()
+abc = createABC3(keyWord)
+matrixKey = matrixNew(abc)

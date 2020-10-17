@@ -1,6 +1,5 @@
 def double_permutation_enc(key1, key2, message):
     if (len(key1) * len(key2) != len(message)):
-        print('саси быдло')
         return
     else:
         permutation_table = []
@@ -56,10 +55,10 @@ def permutation_dec(enc_message, key):
     return message
 
 
-origin = 'ЛДАЛК___НЫАЧЕЛГДПУЫНЕ_ГЛ__ДС_О_ОЧННЛСЮДАОТ,И_БДУ_ЕИ_ДВЗЩООСЬЫСЖ,УОИБГК_СИИ_ИАГВВИ__АБВОЬБТЖОЕИЕО'
-key = [2,4,1,7,3,8,6,5]
-#print(len(origin),len(key))
-print(permutation_dec(origin, key))
+# origin = 'ЛДАЛК___НЫАЧЕЛГДПУЫНЕ_ГЛ__ДС_О_ОЧННЛСЮДАОТ,И_БДУ_ЕИ_ДВЗЩООСЬЫСЖ,УОИБГК_СИИ_ИАГВВИ__АБВОЬБТЖОЕИЕО'
+# key = [2,4,1,7,3,8,6,5]
+# print(len(origin),len(key))
+# print(permutation_dec(origin, key))
 
 
 # print(magic_square_enc([8,3,4,1,5,9,6,7,2], "ВЕДОМОСТЬ"))

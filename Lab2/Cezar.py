@@ -14,6 +14,7 @@ def Cezar(our_text, abc, key):
 
 def decriptCezar(shifrotext,abc,keyInt):
     origin = ""
+    abc.insert(6,"Ё")
     for i in range(len(shifrotext)):
         origin+=abc[(len(abc) + abc.index(shifrotext[i]) - keyInt)%len(abc)]
     return origin
@@ -33,6 +34,7 @@ def aphineCezar(our_text,abc,a,b):
 
 def decriptaphineCezar(shifrotext, indexAphine,abc,a,b):
     origin = ""
+    abc.insert(6, "Ё")
     for i in range(len(shifrotext)):
         origin+=abc[((indexAphine[i] - b)//a) % len(abc)]
     return origin

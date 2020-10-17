@@ -1,4 +1,5 @@
 import sys
+import random
 from Lab1.Lab1 import *
 from Lab2.Cezar import *
 from Lab3.pleyferUpdate import *
@@ -89,6 +90,7 @@ class Request12(QWidget):
         our_text = self.origin.upper()
         self.key1 = self.req12.textEdit_2.toPlainText()
         keyList1 = [int(i) for i in self.key1]
+        # keyList1 = [2,4,1,7,3,8,6,5]
 
         cipherPerm = str(permutation_enc(our_text,keyList1))
         self.answer1.answer.textEdit.setPlainText(cipherPerm)
@@ -99,6 +101,7 @@ class Request12(QWidget):
         our_text = self.origin.upper()
         self.key1 = self.req12.textEdit_2.toPlainText()
         keyList1 = [int(i) for i in self.key1]
+        # keyList1 =[2,4,1,7,3,8,6,5]
 
         cipherPerm = str(permutation_dec(our_text,keyList1))
         self.answer1.answer.textEdit.setPlainText(cipherPerm)
@@ -126,9 +129,11 @@ class Request13(QWidget):
         self.origin = self.req13.textEdit.toPlainText()
         our_text = self.origin.upper()
 
-        # shifrCezar = str(magic_square_enc([16,3,2,13,5,10,11,8,9,6,7,12,4,15,14,1], our_text))
-        # shifrCezar = str(magic_square_enc([9,16,2,7,6,3,13,12,15,10,8,1,4,5,11,14], our_text))
-        magic = str(magic_square_enc([8,3,4,1,5,9,6,7,2], our_text))
+        self.key = [8,3,4,1,5,9,6,7,2]
+        # random.shuffle(key)
+        # self.keyRand = key
+        # magic = str(magic_square_enc(self.keyRand, our_text))
+        magic = str(magic_square_enc(self.key, our_text))
         self.answer1.answer.textEdit.setPlainText(magic)
 
 
@@ -137,9 +142,8 @@ class Request13(QWidget):
         self.origin = self.req13.textEdit.toPlainText()
         our_text = self.origin.upper()
 
-        # shifrCezar = str(magic_square_enc([16,3,2,13,5,10,11,8,9,6,7,12,4,15,14,1], our_text))
-        # shifrCezar = str(magic_square_enc([9,16,2,7,6,3,13,12,15,10,8,1,4,5,11,14], our_text))
-        magic = str(magic_square_dec([8, 3, 4, 1, 5, 9, 6, 7, 2], our_text))
+        # magic = str(magic_square_dec(self.keyRand, our_text))
+        magic = str(magic_square_dec(self.key, our_text))
         self.answer1.answer.textEdit_2.setPlainText(magic)
 
     def clearText(self):
