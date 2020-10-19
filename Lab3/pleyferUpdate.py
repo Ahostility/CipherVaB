@@ -1,5 +1,6 @@
-ALPHABET = ['А', 'Б', 'В', 'Г', 'Д', 'Е', 'Ж', 'З', 'И', 'Й', 'К', 'Л', 'М', 'Н', 'О', 'П', 'Р', 'С', 'Т', 'У', 'Ф', 'Х', 'Ц', 'Ч', 'Ш', 'Щ', 'Ъ', 'Ы', 'Ь', 'Э', 'Ю', 'Я']
-def playfair_encode(key, message):
+from Lab3.playferNew import *
+
+def playfair_encode(message,abc,key):
     table = []
     keyword = list(key.upper())
     message_list = list(message.upper())
@@ -15,9 +16,9 @@ def playfair_encode(key, message):
         if(keyword[i] in keyword[i+1::]):
             excess_keys.append(keyword.index(keyword[i],i+1))
     for i in range(len(excess_keys)):
-        keyword.pop(excess_keys[i] -  i)
+        keyword.pop(excess_keys[i] - i)
     table.extend(keyword)
-    for i in ALPHABET:
+    for i in abc:
         if(i not in table):
             table.append(i)
     excess_keys = []
@@ -42,34 +43,14 @@ def playfair_encode(key, message):
         else:
             enc_message.append(table[8*q0 + r1])
             enc_message.append(table[8*q1 + r0])
-    return ''.join(enc_message)
+    final = ''.join(enc_message)
+    # print(final)
+    # query = answer(final)
+    # return query
+    return final
 
-print(playfair_encode('РАБОТА', 'ПРИЛЕТАЮЗАВТРА'))
+origin = "тотктосмотритнаделособеихсторонобычноневидитниоднойизних".upper()
+keyWord = "жизнь".upper()
+abc = [chr(i) for i in range(1040,1072)]
 
-def createABC3(key):
-    abc = []
-    for i in range(1040,1072):
-        abc.append(chr(i))
-    abcWithKey = abc
-    mid = []
-    for i in range(len(key)):
-        if key[i] not in mid:
-            abcWithKey.pop(abcWithKey.index(key[i]))
-            mid.append(key[i])
-    for i in range(len(mid)):
-        abcWithKey.insert(i, mid[i])
-    abcMid = []
-    for i in range(len(abcWithKey)):
-        abcMid.append((abcWithKey[i % len(abcWithKey)]))
-    return abcMid
-def matrixNew(abc):
-    matrix = []
-    print(abc)
-    for i in range(4):
-        matrix.append(abc[i*8:(i+1)*8])
-        print(matrix[i],i)
-    return matrix
-
-keyWord = "привет".upper()
-abc = createABC3(keyWord)
-matrixKey = matrixNew(abc)
+print(playfair_encode(origin,abc,keyWord))

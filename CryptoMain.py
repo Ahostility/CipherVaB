@@ -338,8 +338,10 @@ class Request3(QWidget):
         self.origin = self.req3.textEdit.toPlainText()
         our_text = self.origin.upper()
         self.key1 = self.req3.textEdit_2.toPlainText()
-        keyWord = self.key1.upper()
-        shifrPleyfer = str(playfair_encode(keyWord,our_text))
+        abc = createABC2()
+        print(abc)
+
+        shifrPleyfer = str(playfair_encode(our_text,abc,self.key1))
         self.answer3.answer.textEdit.setPlainText(shifrPleyfer)
 
     def decription(self):

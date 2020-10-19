@@ -85,7 +85,7 @@ def winston_enc(origin):
             enc_message.append(key1[5 * q1 + r0])
     return ''.join(enc_message)
 #
-# origin = "тотктосмотритнаделособеихсторонобычноневидитниодноиизних".upper()
+# origin = "тот, кто смотрит на дело с обеих сторон, обычно не видит ни однои из них".upper()
 # print(winston_enc(origin))
 # abc = [chr(i) for i in range(1040,1072)]
 # key = "жизнь".upper()
