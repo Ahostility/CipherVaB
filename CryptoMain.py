@@ -129,7 +129,8 @@ class Request13(QWidget):
         self.origin = self.req13.textEdit.toPlainText()
         our_text = self.origin.upper()
 
-        self.key = [8,3,4,1,5,9,6,7,2]
+        # self.key = [8,3,4,1,5,9,6,7,2]
+        self.key = [9,16,2,7,6,3,13,12,15,10,8,1,4,5,11,14]
         # random.shuffle(key)
         # self.keyRand = key
         # magic = str(magic_square_enc(self.keyRand, our_text))
@@ -319,6 +320,10 @@ class Request24(QWidget):
         self.req24.textEdit.clear()
         self.req24.textEdit_2.clear()
         self.req24.textEdit_3.clear()
+
+
+
+
 
 class Request3(QWidget):
     def __init__(self):
