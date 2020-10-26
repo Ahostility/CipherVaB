@@ -1,0 +1,4 @@
+Q
+a,b,c,d,e
+Q,A,B,C,D
+Q->acA,Q->acB,Q->aQ,B->A,B->Cb,B->e,A->Aa,A->Ab,A->a,C->dCc,D->D
