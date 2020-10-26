@@ -120,12 +120,12 @@ def decriptionTris(shifrotext,abc,key):
 
 #
 abc = createABC2()
-# origin = "мыдолжныпризнатьочевидноепонимаютлишьтектохочетпонять".upper()#originText
-# origin = "УСПЕХ"#originText
+# origin = ",/".upper()#originText
+origin = "разумалишаетнесомнениеауверенность".upper()#originText
 # a = int(input())#aphine
 # b = int(input())#aphine
-# key = "музыка".upper()#input().upper()#keyWord
-# keyInt = 17#int(input())#indexKeyShift
+key = "часы".upper()#input().upper()#keyWord
+keyInt = 16#int(input())#indexKeyShift
 # #Cezar
 # print(Cezar(origin,abc,keyInt))
 # print(decriptCezar(Cezar(origin,abc,keyInt),abc,keyInt))
@@ -134,8 +134,9 @@ abc = createABC2()
 # print(aphineCezarRes[0])
 # print(decriptaphineCezar(aphineCezarRes[0],aphineCezarRes[1],abc,a,b))
 # #cezarWithKeyWord
-# print(cezarWithKeyWord(origin,abc,key,keyInt))
-# print(decriptcezarWithKeyWord(cezarWithKeyWord(origin,abc,key,keyInt),abc,key,keyInt))
+# print(abc)
+print(cezarWithKeyWord(origin,abc,key,keyInt))
+print(decriptcezarWithKeyWord(cezarWithKeyWord(origin,abc,key,keyInt),abc,key,keyInt))
 #trisemus
 # print(trisemus(origin,abc,key))
 # print(decriptionTris(trisemus(origin,abc,key),abc,key))
